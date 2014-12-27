@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Wed 24 Dec 2014 11:06:27 PM IRST
+ * [] Last Modified : Sat 27 Dec 2014 09:24:14 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -17,14 +17,14 @@
 #include <iostream>
 
 template<class T>
-class BST{
+class BST {
 	private:
-		class Node{
+		class Node {
 			private:
 				T object;
-				Node* right;
-				Node* left;
-				Node* parent;
+				Node *right;
+				Node *left;
+				Node *parent;
 			public:
 				Node(const T& object);
 
@@ -39,7 +39,7 @@ class BST{
 		};
 		Node* root;
 
-		void inorder(Node* start);
+		void inorder(Node *start);
 	public:
 		BST();
 
@@ -69,7 +69,7 @@ T& BST<T>::Node::getObject(){
 }
 
 template<class T>
-void BST<T>::Node::setRight(Node* right){
+void BST<T>::Node::setRight(Node *right){
 	this->right = right;
 }
 
@@ -79,7 +79,7 @@ typename BST<T>::Node* BST<T>::Node::getRight(){
 }
 
 template<class T>
-void BST<T>::Node::setLeft(Node* left){
+void BST<T>::Node::setLeft(Node *left){
 	this->left = left;
 }
 
@@ -89,7 +89,7 @@ typename BST<T>::Node* BST<T>::Node::getLeft(){
 }
 
 template<class T>
-void BST<T>::Node::setParent(Node* parent){
+void BST<T>::Node::setParent(Node *parent){
 	this->parent = parent;
 }
 
