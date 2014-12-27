@@ -5,17 +5,17 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Wed 24 Dec 2014 11:36:11 PM IRST
+ * [] Last Modified : Sat 27 Dec 2014 09:45:26 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include "Nodetype.h"
+#include <string>
 
 Nodetype::Nodetype()
 {
 	mFrequency = 0;
-	mCodeSize = 0;
 }
 
 Nodetype::Nodetype(char symbol, int frequency)
@@ -62,4 +62,19 @@ void Nodetype::setRight(Nodetype* right)
 Nodetype* Nodetype::getRight()
 {
 	return mRight;
+}
+
+void Nodetype::increaseBitCode(std::string code)
+{
+	mCode += code;
+}
+
+std::string Nodetype::getBitCode() const
+{
+	return mCode;
+}
+
+void Nodetype::setBitCode(std::string code)
+{
+	mCode = code;
 }

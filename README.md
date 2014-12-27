@@ -1,4 +1,4 @@
 HmanCoder
 =========
 
-This is a simple haffman coder application
+This is a simple huffman coder application

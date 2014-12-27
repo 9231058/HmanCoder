@@ -5,32 +5,39 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 05:30:27 AM IRST
+ * [] Last Modified : Sat 27 Dec 2014 09:42:22 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #pragma once
 
-#include <bitset>
+#include <string>
 
-class Nodetype{
+class Nodetype {
 	private:
 		char mSymbol;
 		int mFrequency;
-		int mCodeSize;
-		std::bitset<255> mCode;
-		Nodetype* mLeft;
-		Nodetype* mRight;
+		std::string mCode;
+		Nodetype *mLeft;
+		Nodetype *mRight;
 	public:
 		Nodetype();
 		Nodetype(char symbol, int frequency);
+		
 		void setSymbol(char symbol);
 		char getSymbol();
+		
 		void setFrequency(int frequency);
 		int getFrequency();
+		
 		void setLeft(Nodetype *left);
 		Nodetype *getLeft();
+		
 		void setRight(Nodetype *right);
 		Nodetype *getRight();
+
+		void increaseBitCode(std::string code);
+		std::string getBitCode() const;
+		void setBitCode(std::string code);
 };
