@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 09:42:22 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 02:23:18 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -40,4 +40,6 @@ class Nodetype {
 		void increaseBitCode(std::string code);
 		std::string getBitCode() const;
 		void setBitCode(std::string code);
+
+		bool isLeaf();
 };

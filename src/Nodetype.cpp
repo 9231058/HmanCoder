@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 09:45:26 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 02:23:05 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -77,4 +77,9 @@ std::string Nodetype::getBitCode() const
 void Nodetype::setBitCode(std::string code)
 {
 	mCode = code;
+}
+
+bool Nodetype::isLeaf()
+{
+	return (!mLeft && !mRight);
 }
