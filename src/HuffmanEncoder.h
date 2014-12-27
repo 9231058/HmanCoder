@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 10:06:44 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 02:19:45 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -14,8 +14,9 @@
 
 class HuffmanEncoder {
 	private:
-		std::string inputFile;
-		std::string outputFile;
+		std::string mInputFile;
+		std::string mOutputFile;
 	public:
 		HuffmanEncoder(const std::string &inputFile, const std::string &outputFile);
-}
+		void encode();
+};

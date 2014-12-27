@@ -5,18 +5,18 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 10:51:15 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 02:32:36 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
 #include "MaxHeap.h"
-#include "HaffmanTree.h"
+#include "HuffmanTree.h"
 #include "Nodetype.h"
 
 #include <string>
 
-HaffmanTree::HaffmanTree(int n, MaxHeap<Nodetype*> &pq)
+HuffmanTree::HuffmanTree(int n, MaxHeap<Nodetype*> &pq)
 {
 	for (int i = 0; i < n; i++) {
 		Nodetype *p = pq.top();
@@ -34,7 +34,7 @@ HaffmanTree::HaffmanTree(int n, MaxHeap<Nodetype*> &pq)
 	makeCode(mRoot, "0");
 }
 
-void HaffmanTree::makeCode(Nodetype *node, std::string bitCount)
+void HuffmanTree::makeCode(Nodetype *node, std::string bitCount)
 {
 		
 	node->increaseBitCode(bitCount);
@@ -48,8 +48,10 @@ void HaffmanTree::makeCode(Nodetype *node, std::string bitCount)
 		right->setBitCode(node->getBitCode());
 		this->makeCode(right, "1");
 	}
-	//lets add it to the map now as a saving
-	//if (node->IsLeafNode()) {
-		// this->m_codeMap.insert( std::pair<std::string, std::string>(node->GetString(), node->GetBitCount()) );
-	//}
+	/*
+	 * If node is leaf we can added into BST
+	 * now
+	*/
+	if (node->isLeaf()) {
+	}
 }

@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 09:47:18 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 02:15:18 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -15,11 +15,11 @@
 
 #include <string>
 
-class HaffmanTree {
+class HuffmanTree {
 	private:
 		Nodetype* mRoot;
 		
 		void makeCode(Nodetype *node, std::string bitCount);
 	public:
-		HaffmanTree(int n, MaxHeap<Nodetype*> &pq);
+		HuffmanTree(int n, MaxHeap<Nodetype*> &pq);
 };
