@@ -28,17 +28,17 @@ void Nodetype::setSymbol(char symbol)
 {
 	mSymbol = symbol;
 }
-	
+
 char Nodetype::getSymbol()
 {
 	return mSymbol;
 }
-	
+
 void Nodetype::setFrequency(int frequency)
 {
 	mFrequency = frequency;
 }
-	
+
 int Nodetype::getFrequency()
 {
 	return mFrequency;
@@ -63,4 +63,3 @@ Nodetype* Nodetype::getRight()
 {
 	return mRight;
 }
-

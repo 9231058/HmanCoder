@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Wed 24 Dec 2014 11:35:44 PM IRST
+ * [] Last Modified : Sat 27 Dec 2014 05:30:27 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -29,8 +29,8 @@ class Nodetype{
 		char getSymbol();
 		void setFrequency(int frequency);
 		int getFrequency();
-		void setLeft(Nodetype* left);
-		Nodetype* getLeft();
-		void setRight(Nodetype* right);
-		Nodetype* getRight();
+		void setLeft(Nodetype *left);
+		Nodetype *getLeft();
+		void setRight(Nodetype *right);
+		Nodetype *getRight();
 };
