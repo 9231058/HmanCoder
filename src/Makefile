@@ -1,5 +1,6 @@
-OBJ=Nodetype.o HuffmanTree.o main.o HuffmanEncoder.o
+OBJ=Nodetype.o HuffmanTree.o main.o HuffmanEncoder.o CodedChar.o
 CCFLAGS=-Wall
+
 HmanCoder.out: $(OBJ)
 	g++ $(CCFLAGS) -o HmanCoder.out $(OBJ)
 main.o: main.cpp MaxHeap.h
@@ -10,3 +11,5 @@ Nodetype.o: Nodetype.h Nodetype.cpp
 	g++ $(CCFLAGS) -c Nodetype.cpp
 HuffmanEncoder.o: HuffmanEncoder.h HuffmanEncoder.cpp Nodetype.h
 	g++ $(CCFLAGS) -c HuffmanEncoder.cpp
+CodedChar.o: CodedChar.h CodedChar.cpp
+	g++ $(CCFLAGS) -c CodedChar.cpp
