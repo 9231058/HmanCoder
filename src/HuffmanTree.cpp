@@ -5,20 +5,22 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 02:32:36 AM IRST
+ * [] Last Modified : Sun 28 Dec 2014 04:28:51 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
+#include <string>
+
 #include "MaxHeap.h"
 #include "HuffmanTree.h"
 #include "Nodetype.h"
 
-#include <string>
+Nodetype *HuffmanTree::mRoot = NULL;
 
-HuffmanTree::HuffmanTree(int n, MaxHeap<Nodetype*> &pq)
+void HuffmanTree::buildTree(int n, MaxHeap<Nodetype*> &pq)
 {
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n - 1; i++) {
 		Nodetype *p = pq.top();
 		pq.pop();
 		Nodetype *q = pq.top();
@@ -31,7 +33,7 @@ HuffmanTree::HuffmanTree(int n, MaxHeap<Nodetype*> &pq)
 	}
 	mRoot = pq.top();
 	pq.pop();
-	makeCode(mRoot, "0");
+	makeCode(mRoot, "");
 }
 
 void HuffmanTree::makeCode(Nodetype *node, std::string bitCount)
@@ -42,16 +44,12 @@ void HuffmanTree::makeCode(Nodetype *node, std::string bitCount)
 	Nodetype *right = node->getRight();
 	if (left != NULL) {
 		left->setBitCode(node->getBitCode());
-		this->makeCode(left, "0");
+		HuffmanTree::makeCode(left, "0");
 	}
 	if (right != NULL) {
 		right->setBitCode(node->getBitCode());
-		this->makeCode(right, "1");
+		HuffmanTree::makeCode(right, "1");
 	}
-	/*
-	 * If node is leaf we can added into BST
-	 * now
-	*/
-	if (node->isLeaf()) {
-	}
+	if (!node->isLeaf())
+		delete node;
 }

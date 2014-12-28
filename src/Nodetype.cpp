@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 02:23:05 AM IRST
+ * [] Last Modified : Sun 28 Dec 2014 04:01:05 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -16,12 +16,16 @@
 Nodetype::Nodetype()
 {
 	mFrequency = 0;
+	mLeft = NULL;
+	mRight = NULL;
 }
 
 Nodetype::Nodetype(char symbol, int frequency)
 {
 	mSymbol = symbol;
 	mFrequency = frequency;
+	mLeft = NULL;
+	mRight = NULL;
 }
 
 void Nodetype::setSymbol(char symbol)
