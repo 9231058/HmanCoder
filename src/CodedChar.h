@@ -5,11 +5,12 @@
  *
  * [] Creation Date : 28-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 09:55:34 PM IRST
+ * [] Last Modified : Mon 29 Dec 2014 02:10:03 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
+#pragma once
 #include <string>
 
 class CodedChar {
@@ -18,7 +19,9 @@ class CodedChar {
 		std::string mCode;
 	public:
 		CodedChar(char c, std::string mCode);
-		std::string getCode();
+		CodedChar();
+
+		std::string getCode() const;
 		
 		friend bool operator==(const CodedChar &op1, const CodedChar &op2);
 		friend bool operator<(const CodedChar &op1, const CodedChar &op2);
