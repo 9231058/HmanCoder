@@ -5,11 +5,12 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 02:19:45 AM IRST
+ * [] Last Modified : Sun 28 Dec 2014 03:56:35 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
 */
+#pragma once
 #include <string>
 
 class HuffmanEncoder {

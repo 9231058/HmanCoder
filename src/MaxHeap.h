@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Wed 24 Dec 2014 11:06:29 PM IRST
+ * [] Last Modified : Sun 28 Dec 2014 04:38:34 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -18,10 +18,13 @@ template<typename T>
 class MaxHeap{
 	public:
 		MaxHeap(int capacity);
+		
 		bool isEmpty();
-		const T& top();
+		const T &top();
 		void push(const T& input);
 		void pop();
+
+		virtual ~MaxHeap();
 	private:
 		T*  mHeap;
 		int mHeapSize;
@@ -84,4 +87,10 @@ void MaxHeap<T>::pop(){
 		child *= 2;
 	}
 	mHeap[current] = last;
+}
+
+template<typename T>
+MaxHeap<T>::~MaxHeap()
+{
+	delete[] mHeap;
 }

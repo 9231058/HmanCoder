@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 02:23:18 AM IRST
+ * [] Last Modified : Sun 28 Dec 2014 04:03:31 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -13,7 +13,10 @@
 #pragma once
 
 #include <string>
-
+/*
+ * This class represent a node
+ * in huffman tree.
+*/
 class Nodetype {
 	private:
 		char mSymbol;
