@@ -8,26 +8,25 @@
 #define CHAR_BIT 8
 
 class BitStream {
-public:
-    virtual ~BitStream();
-    virtual bool isGood() const =0;
-    virtual bool isEOF() const =0;
+	public:
+    		virtual ~BitStream();
+    		virtual bool isGood() const = 0;
+    		virtual bool isEOF() const = 0;
 
-    virtual std::ios & GetStream() const { return m_stream; }
+    		virtual std::ios & GetStream() const { return m_stream; }
 
-    virtual unsigned int GetPaddingLength() const { return m_paddingBitLength; }
-    virtual void SetPaddingLength(unsigned int padd){ m_paddingBitLength = padd; }
-protected:
-    BitStream(std::ios & stream);
+    		virtual unsigned int GetPaddingLength() const { return m_paddingBitLength; }
+    		virtual void SetPaddingLength(unsigned int padd){ m_paddingBitLength = padd; }
+	protected:
+    		BitStream(std::ios &stream);
 
-    unsigned int m_paddingBitLength;
-    unsigned int m_currentBitNum;
-    std::ios & m_stream;
-    unsigned char m_currentByte;
-private:
-    BitStream();
-    BitStream(const BitStream& copy);
-
+    		std::ios & m_stream;
+    		unsigned int m_paddingBitLength;
+    		unsigned int m_currentBitNum;
+    		unsigned char m_currentByte;
+	private:
+    		BitStream();
+    		BitStream(const BitStream& copy);
 };
 
 class OutputBitStream: public BitStream

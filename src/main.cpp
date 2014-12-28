@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 04:39:15 AM IRST
+ * [] Last Modified : Mon 29 Dec 2014 02:03:09 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -17,6 +17,7 @@
 #include "Nodetype.h"
 #include "MaxHeap.h"
 #include "HuffmanTree.h"
+#include "HuffmanEncoder.h"
 
 int main(int argc, char *argv[])
 {
@@ -27,23 +28,7 @@ int main(int argc, char *argv[])
 	cmd.add(iPath);
 	cmd.add(oPath);
 	cmd.parse(argc, argv);
-
-	/*
-	 * some dummy code for testing
-	 * our HuffmanTree class functionality
-	*/
-
-	Nodetype* n1 = new Nodetype('c', 10);
-	Nodetype* n2 = new Nodetype('a', 20);
-	MaxHeap<Nodetype*> pq;
-	pq.push(n1);
-	pq.push(n2);
-
-	HuffmanTree::buildTree(2, pq);
-
-	std::cout << n1->getBitCode() << std::endl;
-	std::cout << n2->getBitCode() << std::endl;
-
-	delete n1;
-	delete n2;
+	
+	HuffmanEncoder hman(iPath.getValue(), oPath.getValue());
+	hman.encode();
 }

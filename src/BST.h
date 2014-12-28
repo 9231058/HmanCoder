@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sat 27 Dec 2014 09:24:14 PM IRST
+ * [] Last Modified : Mon 29 Dec 2014 02:16:56 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -45,7 +45,7 @@ class BST {
 
 		void remove(const T& object);
 		void insert(const T& object);
-		const Node* find(const T& object);
+		T find(const T& object);
 		const T& sup(const T& object);
 		void inorder();
 };
@@ -217,18 +217,18 @@ void BST<T>::remove(const T& object){
 }
 
 template<class T>
-const typename BST<T>::Node* BST<T>::find(const T& object){
+T BST<T>::find(const T& object){
 	Node* x = root;
 	while(x != NULL){
 		if(x->getObject() < object){
 			x = x->getRight();
-		}else if(x->getObject == object){
-			return x;
+		}else if(x->getObject() == object){
+			return x->getObject();
 		}else{
 			x = x->getLeft();
 		}
 	}
-	return NULL;
+	throw std::invalid_argument("404 Not Found");
 }
 
 template<class T>

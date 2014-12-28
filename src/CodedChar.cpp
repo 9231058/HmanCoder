@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 28-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 09:54:15 PM IRST
+ * [] Last Modified : Mon 29 Dec 2014 02:10:14 AM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -20,7 +20,13 @@ CodedChar::CodedChar(char c, std::string code)
 	mCode = code;
 }
 
-std::string CodedChar::getCode()
+CodedChar::CodedChar()
+{
+	mC = ' ';
+	mCode = "";
+}
+
+std::string CodedChar::getCode() const
 {
 	return mCode;
 }
