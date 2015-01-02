@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Mon 29 Dec 2014 02:19:27 AM IRST
+ * [] Last Modified : Fri 02 Jan 2015 11:23:17 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -31,6 +31,7 @@ HuffmanEncoder::HuffmanEncoder(const std::string &inputFile, const std::string &
 void HuffmanEncoder::read()
 {
 	std::ifstream inputFileStream(mInputFile.c_str(), std::ios::in);
+	std::ofstream outputFileStream(mOutputFile.c_str(), std::ios::out);
 	int chars[256];
 	char currentChar;
 	List<Nodetype*> nodes;
@@ -57,9 +58,13 @@ void HuffmanEncoder::read()
 
 	for (int i = 0; i < nodes.size(); i++) {
 		CodedChar codedChar = CodedChar(nodes[i]->getSymbol(), nodes[i]->getBitCode());
+		outputFileStream << (int) nodes[i]->getSymbol() << " " << nodes[i]->getBitCode() << std::endl;
 		mCodedChars.insert(codedChar);
 		delete nodes[i];
 	}
+
+	outputFileStream.close();
+	inputFileStream.close();
 }
 
 void HuffmanEncoder::encode()
@@ -79,5 +84,8 @@ void HuffmanEncoder::encode()
 		std::string binaryCode = mCodedChars.find(codedChar).getCode();
 		outBitStream.InsertBits(binaryCode);
 	}
-	std::cout << outBitStream << std::endl;
+
+	std::ofstream outputFileStream(mOutputFile.c_str(), std::ios::app);
+	outputFileStream << outBitStream;
+	outputFileStream.close();
 }
