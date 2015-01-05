@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Mon 29 Dec 2014 02:16:56 AM IRST
+ * [] Last Modified : Mon 05 Jan 2015 02:32:04 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -228,7 +228,7 @@ T BST<T>::find(const T& object){
 			x = x->getLeft();
 		}
 	}
-	throw std::invalid_argument("404 Not Found");
+	return object;
 }
 
 template<class T>

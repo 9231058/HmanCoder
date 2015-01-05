@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Mon 05 Jan 2015 02:37:43 PM IRST
+ * [] Last Modified : Mon 05 Jan 2015 02:38:17 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -15,17 +15,17 @@
 #include <iostream>
 
 #include "BST.h"
-#include "CodedChar.h"
+#include "DeCodedChar.h"
 
-class HuffmanEncoder {
+class HuffmanDecoder {
 	private:
 		std::string mInputFile;
 		std::string mOutputFile;
-		BST<CodedChar> mCodedChars;
+		BST<DeCodedChar> mDeCodedChars;
 
 		void read();
 	public:
-		HuffmanEncoder(const std::string &inputFile, const std::string &outputFile);
-		void encode();
+		HuffmanDecoder(const std::string &inputFile, const std::string &outputFile);
+		void decode();
 		
 };
