@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 04:01:05 AM IRST
+ * [] Last Modified : Mon 05 Jan 2015 03:51:03 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -86,4 +86,13 @@ void Nodetype::setBitCode(std::string code)
 bool Nodetype::isLeaf()
 {
 	return (!mLeft && !mRight);
+}
+
+bool operator<(Nodetype o1, Nodetype o2)
+{
+	return (o1.mFrequency > o2.mFrequency);
+}
+bool operator>=(Nodetype o1, Nodetype o2)
+{
+	return (o1.mFrequency <= o2.mFrequency);
 }
