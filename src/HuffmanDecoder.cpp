@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Mon 05 Jan 2015 03:15:06 PM IRST
+ * [] Last Modified : Mon 05 Jan 2015 04:10:32 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -40,10 +40,15 @@ void HuffmanDecoder::decode()
 		std::cout << currentAscii << " " << currentCode << std::endl;
 		mDeCodedChars.insert(DeCodedChar(currentAscii, currentCode));
 	} while(currentAscii != -1);
+	
+	int padding;
+	inputFileStream >> padding;
+
 	inputFileStream.ignore(1, '\n');
 
 	currentCode = "";
 	InputBitStream inBitStream(inputFileStream);
+	inBitStream.SetPaddingLength(padding);
 
 	while (inBitStream.isGood()) {
 		currentCode += inBitStream.GetNextBit();	

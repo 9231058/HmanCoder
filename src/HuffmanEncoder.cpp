@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Mon 05 Jan 2015 02:37:46 PM IRST
+ * [] Last Modified : Mon 05 Jan 2015 04:25:37 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -44,6 +44,7 @@ void HuffmanEncoder::read()
 		inputFileStream.get(currentChar);
 		if (inputFileStream.eof())
 			break;
+		std::cout << (int) currentChar << " " << currentChar << std::endl;
 		chars[(int)currentChar]++;
 	}
 	
@@ -62,6 +63,7 @@ void HuffmanEncoder::read()
 		mCodedChars.insert(codedChar);
 		delete nodes[i];
 	}
+	outputFileStream << "-1 -" << std::endl;
 
 	outputFileStream.close();
 	inputFileStream.close();
@@ -82,10 +84,13 @@ void HuffmanEncoder::encode()
 			break;
 		CodedChar codedChar = CodedChar(currentChar, "");
 		std::string binaryCode = mCodedChars.find(codedChar).getCode();
+		std::cout << currentChar << " : " << binaryCode << std::endl;
 		outBitStream.InsertBits(binaryCode);
 	}
 
 	std::ofstream outputFileStream(mOutputFile.c_str(), std::ios::app);
+	outBitStream.Flush();
+	outputFileStream << outBitStream.GetPaddingLength() << std::endl;
 	outputFileStream << outBitStream;
 	outputFileStream.close();
 }

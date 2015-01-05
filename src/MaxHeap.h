@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 04:38:34 AM IRST
+ * [] Last Modified : Mon 05 Jan 2015 03:36:59 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -61,7 +61,7 @@ void MaxHeap<T>::push(const T& input){
 	}
 
 	int current = ++mHeapSize;
-	while(current != 1 && mHeap[current / 2] < input){
+	while(current != 1 && *mHeap[current / 2] < *input){
 		mHeap[current] = mHeap[current / 2];
 		current /= 2;
 	}
@@ -78,9 +78,9 @@ void MaxHeap<T>::pop(){
 	int current = 1;
 	int child = 2;
 	while(child <= mHeapSize){
-		if(child < mHeapSize && mHeap[child] < mHeap[child + 1]) child++;
+		if(child < mHeapSize && *mHeap[child] < *mHeap[child + 1]) child++;
 
-		if(last >= mHeap[child]) break;
+		if(*last >= *mHeap[child]) break;
 
 		mHeap[current] = mHeap[child];
 		current = child;

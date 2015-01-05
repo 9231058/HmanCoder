@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Sun 28 Dec 2014 04:03:31 AM IRST
+ * [] Last Modified : Mon 05 Jan 2015 03:38:12 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -45,4 +45,7 @@ class Nodetype {
 		void setBitCode(std::string code);
 
 		bool isLeaf();
+
+		friend bool operator<(Nodetype o1, Nodetype o2);
+		friend bool operator>=(Nodetype o1, Nodetype o2);
 };
