@@ -5,10 +5,14 @@
  *
  * [] Creation Date : 24-12-2014
  *
- * [] Last Modified : Mon 05 Jan 2015 03:36:59 PM IRST
+ * [] Last Modified : Mon 05 Jan 2015 04:30:43 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
+*/
+/*
+ * Please use this structure just for pointers.
+ * in this structure we assume T is a pointer.
 */
 #pragma once
 
