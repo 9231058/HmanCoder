@@ -129,7 +129,7 @@ bool InputBitStream::isEOF() const
     //First peek, because if we are at last byte not counting EOF we want flag to be raised
     this->GetStream().peek();
     bool endOfFile = this->GetStream().eof();
-    bool pastPadding = this->m_paddingBitLength > (CHAR_BIT - this->m_currentBitNum);
+    bool pastPadding = this->m_paddingBitLength >= (CHAR_BIT - this->m_currentBitNum);
     //if we are EOF and past padding, then we are truly EOF
     if (endOfFile && !pastPadding)
     {
