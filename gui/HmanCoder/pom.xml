@@ -19,9 +19,19 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>1.10</version>
         </dependency>
         <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
             <groupId>com.intellij</groupId>
             <artifactId>forms_rt</artifactId>
-            <version>5.0</version>
+            <version>7.0.3</version>
         </dependency>
     </dependencies>
 

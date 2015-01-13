@@ -13,9 +13,7 @@
 
 package home.parham.core;
 
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.ConfigurationFactory;
+import home.parham.config.ConfigurationHandler;
 
 public class ZipFactory {
 	private static ZipFactory instance;
@@ -23,14 +21,7 @@ public class ZipFactory {
 	private String zipClass;
 
 	private ZipFactory(){
-		ConfigurationFactory factory = new ConfigurationFactory("config.xml");
-		try {
-			Configuration config = factory.getConfiguration();
-			zipClass = config.getString("ZipClass", "home.parham.core.CppZip");
-		} catch (ConfigurationException e) {
-			e.printStackTrace();
-			zipClass = "home.parham.core.CppZip";
-		}
+		zipClass = ConfigurationHandler.getInstance().getConfiguration().getString("Zip-Definition.ZipClass", "home.parham.core.CppZip");
 	}
 
 	public static ZipFactory getInstance(){

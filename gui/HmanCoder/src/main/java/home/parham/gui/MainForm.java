@@ -13,6 +13,8 @@
 
 package home.parham.gui;
 
+import home.parham.core.Unzip;
+import home.parham.core.UnzipFactory;
 import home.parham.core.Zip;
 import home.parham.core.ZipFactory;
 
@@ -58,6 +60,15 @@ public class MainForm {
 				Zip zipper = ZipFactory.getInstance().getZip();
 				zipper.setPath(inputFile.getPath());
 				new Thread(zipper).start();
+			}
+		});
+
+		unzipButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent){
+				Unzip unzipper = UnzipFactory.getInstance().getUnzip();
+				unzipper.setPath(inputFile.getPath());
+				new Thread(unzipper).start();
 			}
 		});
 

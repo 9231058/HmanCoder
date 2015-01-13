@@ -50,7 +50,7 @@ void OutputBitStream::InsertBit(unsigned int bit)
     bit = bit << (CHAR_BIT - this->m_currentBitNum); //lets move the bit to the current position (if it's a one it matters onl)
     this->m_paddingBitLength = CHAR_BIT - this->m_currentBitNum;
     this->m_currentByte |= bit;
-    
+
     this->m_currentBitNum += 1;
 
     if (this->m_currentBitNum > CHAR_BIT)
@@ -99,12 +99,12 @@ void InputBitStream::Consume()
 
 std::string InputBitStream::GetNextBit()
 {
-    this->m_currentBitNum += 1;   
+    this->m_currentBitNum += 1;
     if (this->m_currentBitNum > CHAR_BIT)
     {
         this->Consume();
     }
-    
+
     int bit = this->m_currentByte >> (CHAR_BIT - this->m_currentBitNum);
     bit = bit & 1; //apply mask to get rid of everything but first bit
 
@@ -135,5 +135,5 @@ bool InputBitStream::isEOF() const
     {
         this->GetStream().clear(); //clear the EOF bit since we have few more bits to process
     }
-    return this->GetStream().eof(); 
+    return this->GetStream().eof();
 }
