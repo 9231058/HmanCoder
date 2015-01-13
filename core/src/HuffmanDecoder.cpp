@@ -5,7 +5,7 @@
  *
  * [] Creation Date : 27-12-2014
  *
- * [] Last Modified : Mon 05 Jan 2015 04:10:32 PM IRST
+ * [] Last Modified : Tue 13 Jan 2015 09:08:53 PM IRST
  *
  * [] Created By : Parham Alvani (parham.alvani@gmail.com)
  * =======================================
@@ -39,7 +39,7 @@ void HuffmanDecoder::decode()
 		inputFileStream >> currentAscii >> currentCode;
 		std::cout << currentAscii << " " << currentCode << std::endl;
 		mDeCodedChars.insert(DeCodedChar(currentAscii, currentCode));
-	} while(currentAscii != -1);
+	} while (currentAscii != -1);
 	
 	int padding;
 	inputFileStream >> padding;

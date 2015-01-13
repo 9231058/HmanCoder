@@ -14,9 +14,7 @@
 package home.parham.core;
 
 
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.ConfigurationFactory;
+import home.parham.config.ConfigurationHandler;
 
 public class UnzipFactory {
 	private static UnzipFactory instance;
@@ -24,14 +22,7 @@ public class UnzipFactory {
 	private String unzipClass;
 
 	private UnzipFactory(){
-		ConfigurationFactory factory = new ConfigurationFactory("config.xml");
-		try {
-			Configuration config = factory.getConfiguration();
-			unzipClass = config.getString("UnzipClass", "home.parham.core.CppUnzip");
-		} catch (ConfigurationException e) {
-			e.printStackTrace();
-			unzipClass = "home.parham.core.CppUnzip";
-		}
+		unzipClass = ConfigurationHandler.getInstance().getConfiguration().getString("UnzipClass", "home.parham.core.CppUnzip");
 	}
 
 	public static UnzipFactory getInstance(){
@@ -40,7 +31,7 @@ public class UnzipFactory {
 		return instance;
 	}
 
-	Unzip getUnzip(){
+	public Unzip getUnzip(){
 		try {
 			return (Unzip) Class.forName(unzipClass).newInstance();
 		} catch (ClassNotFoundException e) {
